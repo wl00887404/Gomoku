@@ -35,6 +35,7 @@ export default class CanvasHandler {
         let grid = document.createElement("canvas")
         grid.width = this._width
         grid.height = this._height
+        grid.innerHTML="你的瀏覽器不支援Canvs<br/>請轉換成Dom顯示"
         this.container.appendChild(grid)
 
         let ctx = grid.getContext('2d')
