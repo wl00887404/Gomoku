@@ -187,6 +187,7 @@ class CanvasHandler {
         let grid = document.createElement("canvas")
         grid.width = this._width
         grid.height = this._height
+        grid.innerHTML="你的瀏覽器不支援Canvs<br/>請轉換成Dom顯示"
         this.container.appendChild(grid)
 
         let ctx = grid.getContext('2d')
@@ -508,7 +509,7 @@ class Gomoku {
         let viewSetting={root, players, rows, cols, gridSize,onclick:this._move.bind(this)}
 
         this.handler = {
-            view: new __WEBPACK_IMPORTED_MODULE_1__gomoku_canvas_js__["a" /* default */](viewSetting),
+            view: new __WEBPACK_IMPORTED_MODULE_0__gomoku_dom_js__["a" /* default */](viewSetting),
             checkWinner: new __WEBPACK_IMPORTED_MODULE_2__gomoku_checkWinner_js__["a" /* default */](),
         }
 
