@@ -18,7 +18,7 @@ export default class Gomoku {
         let viewSetting={root, players, rows, cols, gridSize,onclick:this._move.bind(this)}
 
         this.handler = {
-            view: new CanvasHandler(viewSetting),
+            view: new DomHandler(viewSetting),
             checkWinner: new WinnerHandler(),
         }
 
