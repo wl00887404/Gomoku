@@ -1,0 +1,11 @@
+:local(.container) {
+    position: relative;
+    & > canvas {
+        &:nth-child(1) {
+            position: static;
+        }
+        top:0;
+        left:0;
+        position: absolute;
+    }
+}

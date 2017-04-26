@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="black" />
+	<link href="build/style.css" rel="stylesheet">
+	<title>Gomoku</title>
+</head>
+
+<body>
+	<div class="container">
+		<ol id="log"></ol>
+		<div>
+			<div class="controllButtons">
+				<button type="button" id="newGame">New game</button>
+				<button type="button" id="restart" style="display:none;">Restart</button>
+				<button type="button" id="undo" style="display:none;">Undo</button>
+				<input type="radio" name="viewHandler" value="dom" id="domHandler" checked><label for="domHandler">Dom</label>
+				<input type="radio" name="viewHandler" value="canvas" id="canvasHandler"><label for="canvasHandler">Canvas</label>
+			</div>
+			<div id="game"></div>
+		</div>
+	</div>
+
+	<script src="build/bundle.js"></script>
+</body>
+
+</html>
