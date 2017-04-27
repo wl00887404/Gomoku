@@ -573,16 +573,17 @@ class Gomoku {
             case "canvas":
                 this.log("render with Canvas")
                 this.handler.view=new __WEBPACK_IMPORTED_MODULE_1__gomoku_canvas_js__["a" /* default */](viewSetting)
+                this._render()
                 break
             case "dom":
                 this.log("render with Canvas")
                 this.handler.view=new __WEBPACK_IMPORTED_MODULE_0__gomoku_dom_js__["a" /* default */](viewSetting)
+                this._render()
                 break
             default:
                 this.log("unknowen view handler")
                 break
         }
-        this._render()
     }
 
     _checkWinner() {
