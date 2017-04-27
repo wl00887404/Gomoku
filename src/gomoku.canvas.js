@@ -18,7 +18,6 @@ export default class CanvasHandler {
         this.container = container
         this._setGrid(rows, cols)
         this.chessLayer = players.map(p => new ChessLayer({root: container, color: p.color, width, height, gridSize}))
-        this.render(players)
     }
     render(players) {
         players.forEach((({

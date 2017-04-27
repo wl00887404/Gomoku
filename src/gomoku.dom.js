@@ -12,7 +12,6 @@ export default class DomHandler {
         this.container = container
         this._setGrid(rows, cols)
         this.chessLayer = players.map(p => new ChessLayer({root: container, color: p.color}))
-        this.render(players)
     }
 
     render(players) {

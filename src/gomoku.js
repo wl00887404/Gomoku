@@ -82,14 +82,18 @@ export default class Gomoku {
         this.handler.view.unmount();
         switch (handler) {
             case "canvas":
+                this.log("render with Canvas")
                 this.handler.view=new CanvasHandler(viewSetting)
                 break
             case "dom":
+                this.log("render with Canvas")
                 this.handler.view=new DomHandler(viewSetting)
                 break
             default:
+                this.log("unknowen view handler")
                 break
         }
+        this._render()
     }
 
     _checkWinner() {
