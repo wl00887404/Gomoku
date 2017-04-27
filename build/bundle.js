@@ -557,7 +557,7 @@ class Gomoku {
             return
         }
 
-        this.log(`${this.state.nowPlayer} undo`)
+        this.log(`${this.state.nowPlayer.name} undo`)
         this.state.turn -= 1
         this.state.nowPlayer = this.players[this.state.turn % this.players.length]
         this.state.nowPlayer.undoMove()
