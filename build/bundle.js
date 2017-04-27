@@ -170,7 +170,6 @@ class CanvasHandler {
         this.container = container
         this._setGrid(rows, cols)
         this.chessLayer = players.map(p => new ChessLayer({root: container, color: p.color, width, height, gridSize}))
-        this.render(players)
     }
     render(players) {
         players.forEach((({
@@ -387,7 +386,6 @@ class DomHandler {
         this.container = container
         this._setGrid(rows, cols)
         this.chessLayer = players.map(p => new ChessLayer({root: container, color: p.color}))
-        this.render(players)
     }
 
     render(players) {
@@ -573,14 +571,18 @@ class Gomoku {
         this.handler.view.unmount();
         switch (handler) {
             case "canvas":
+                this.log("render with Canvas")
                 this.handler.view=new __WEBPACK_IMPORTED_MODULE_1__gomoku_canvas_js__["a" /* default */](viewSetting)
                 break
             case "dom":
+                this.log("render with Canvas")
                 this.handler.view=new __WEBPACK_IMPORTED_MODULE_0__gomoku_dom_js__["a" /* default */](viewSetting)
                 break
             default:
+                this.log("unknowen view handler")
                 break
         }
+        this._render()
     }
 
     _checkWinner() {
