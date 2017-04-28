@@ -40,7 +40,7 @@ export default class Gomoku {
     restart() {
         if (this.state.playing) {
             if (!confirm('Are you sure to restart?')) {
-                return
+                return false
             }
         }
 
@@ -55,7 +55,7 @@ export default class Gomoku {
 
         this._render()
         this.start()
-
+        return true
     }
 
     undo() {
@@ -87,7 +87,7 @@ export default class Gomoku {
                 this._render()
                 break
             case "dom":
-                this.log("render with Canvas")
+                this.log("render with Dom")
                 this.handler.view=new DomHandler(viewSetting)
                 this._render()
                 break
