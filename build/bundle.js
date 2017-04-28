@@ -113,8 +113,8 @@ buttons.newGame.addEventListener("click", () => {
 })
 
 buttons.restart.addEventListener("click", () => {
-    Array.from(log.childNodes).forEach(childNode => log.removeChild(childNode))
-    game.restart()
+    if(game.restart())
+        Array.from(log.childNodes).forEach(childNode => log.removeChild(childNode))
 })
 buttons.undo.addEventListener("click", game.undo.bind(game))
 
@@ -529,7 +529,7 @@ class Gomoku {
     restart() {
         if (this.state.playing) {
             if (!confirm('Are you sure to restart?')) {
-                return
+                return false
             }
         }
 
@@ -544,7 +544,7 @@ class Gomoku {
 
         this._render()
         this.start()
-
+        return true
     }
 
     undo() {
@@ -556,7 +556,6 @@ class Gomoku {
             this.log("There is no chess on the board")
             return
         }
-
 
         this.state.turn -= 1
         this.state.nowPlayer = this.players[this.state.turn % this.players.length]
@@ -577,7 +576,7 @@ class Gomoku {
                 this._render()
                 break
             case "dom":
-                this.log("render with Canvas")
+                this.log("render with Dom")
                 this.handler.view=new __WEBPACK_IMPORTED_MODULE_0__gomoku_dom_js__["a" /* default */](viewSetting)
                 this._render()
                 break
