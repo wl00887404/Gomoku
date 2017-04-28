@@ -35,8 +35,8 @@ buttons.newGame.addEventListener("click", () => {
 })
 
 buttons.restart.addEventListener("click", () => {
-    Array.from(log.childNodes).forEach(childNode => log.removeChild(childNode))
-    game.restart()
+    if(game.restart())
+        Array.from(log.childNodes).forEach(childNode => log.removeChild(childNode))
 })
 buttons.undo.addEventListener("click", game.undo.bind(game))
 
